@@ -32,4 +32,4 @@ In order to listen the music it's necesary to install snapclient. There are two 
 That's all! The system can be easily tested by playing audio clip provided in this repo.
 
     localhost:6680 -> Browse -> File -> media -> Monarch-of-the-street-clip.mp3
-
+*localhost* must be the address to Mopidy server.
