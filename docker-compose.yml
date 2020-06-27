@@ -1,0 +1,43 @@
+version: "3"
+services:
+
+  snapserver:
+    image: snapserver
+    restart: always
+    build:
+      context: ./docker/snapserver
+      args: 
+        - SNAPCASTVERSION=0.20.0
+        - SNAPCAST_FILE=0.20.0-1
+        - ARCH=armhf # or amd64
+    ports:
+      - 1704:1704
+      - 1705:1705
+      - 1780:1780
+    volumes:
+      - soundshare:/tmp
+      - ./docker/snapserver/snapserver.conf:/etc/default/snapserver.conf
+      # - ./docker/snapserver/snapserver:/etc/default/snapserver
+
+  mopidy:
+    image: mopidy/iris
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/mopidy-iris/Dockerfile
+    depends_on:
+      - snapserver
+    ports:
+      - 6600:6600
+      - 6680:6680
+    volumes:
+      # Uncomment these lines to use a host-managed development build
+      #- ./mopidy_iris:/iris/mopidy_iris
+      #- ./IRIS_VERSION:/iris/IRIS_VERSION
+      - ./docker/mopidy-iris/data:/var/lib/mopidy/iris
+      - ./docker/mopidy-iris/media:/var/lib/mopidy/media
+      - ./docker/mopidy-iris/mopidy.example.conf:/config/mopidy.conf
+      - soundshare:/tmp
+
+volumes:
+  soundshare:
