@@ -32,11 +32,12 @@ services:
       - 6680:6680
     volumes:
       # Uncomment these lines to use a host-managed development build
-      #- ./mopidy_iris:/iris/mopidy_iris
-      #- ./IRIS_VERSION:/iris/IRIS_VERSION
-      - ./docker/mopidy-iris/data:/var/lib/mopidy/iris
-      - ./docker/mopidy-iris/media:/var/lib/mopidy/media
+      #- ./docker/mopidy-iris/dev:/iris/mopidy_iris
+      #- ./docker/mopidy-iris/IRIS_VERSION:/iris/IRIS_VERSION
       - ./docker/mopidy-iris/mopidy.example.conf:/config/mopidy.conf
+      - ./docker/mopidy-iris/data:/var/lib/mopidy/iris
+      - ./docker/mopidy-iris/local:/var/lib/mopidy/local
+      - ./docker/mopidy-iris/media:/var/lib/mopidy/media
       - soundshare:/tmp
 
 volumes:

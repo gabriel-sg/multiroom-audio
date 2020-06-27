@@ -1,1 +1,10 @@
+docker-compose.override.yaml
 docker/mopidy-iris/mopidy.conf
+
+docker/mopidy-iris/local/*
+!docker/mopidy-iris/local/.gitkeep
+docker/mopidy-iris/data/*
+!docker/mopidy-iris/data/.gitkeep
+docker/mopidy-iris/media/*
+!docker/mopidy-iris/media/.gitkeep
+!docker/mopidy-iris/media/Monarch_of_the_street_clip.mp3
