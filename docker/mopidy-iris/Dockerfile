@@ -94,6 +94,6 @@ VOLUME ["/var/lib/mopidy/local"]
 
 EXPOSE 6600 6680 1704 1705 5555/udp
 
-# ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint.sh"]
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint.sh"]
+# ENTRYPOINT ["/entrypoint.sh"]
 CMD ["mopidy"]
