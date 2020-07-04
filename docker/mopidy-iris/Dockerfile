@@ -67,7 +67,6 @@ RUN python3.7 -m pip install --no-cache \
 
 # Start helper script.
 COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 # Default configuration.
 COPY docker/mopidy-iris/mopidy.example.conf /config/mopidy.conf
@@ -96,5 +95,4 @@ VOLUME ["/var/lib/mopidy/local"]
 EXPOSE 6600 6680 1704 1705 5555/udp
 
 ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint.sh"]
-# ENTRYPOINT ["/entrypoint.sh"]
 CMD ["mopidy"]
