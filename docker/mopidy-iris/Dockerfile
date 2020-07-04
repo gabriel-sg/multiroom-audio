@@ -67,6 +67,7 @@ RUN python3.7 -m pip install --no-cache \
 
 # Start helper script.
 COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Default configuration.
 COPY docker/mopidy-iris/mopidy.example.conf /config/mopidy.conf
