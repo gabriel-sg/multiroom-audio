@@ -38,6 +38,8 @@ services:
       - ./docker/mopidy-iris/data:/var/lib/mopidy/iris
       - ./docker/mopidy-iris/local:/var/lib/mopidy/local
       - ./docker/mopidy-iris/media:/var/lib/mopidy/media
+      - ./docker/mopidy-iris/playlists:/var/lib/mopidy/m3u
+      - ./docker/mopidy-iris/http:/var/lib/mopidy/http
       - soundshare:/tmp
 
 volumes:

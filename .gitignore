@@ -3,6 +3,10 @@ docker/mopidy-iris/mopidy.conf
 
 docker/mopidy-iris/local/*
 !docker/mopidy-iris/local/.gitkeep
+docker/mopidy-iris/http/*
+!docker/mopidy-iris/http/.gitkeep
+docker/mopidy-iris/playlists/*
+!docker/mopidy-iris/playlists/.gitkeep
 docker/mopidy-iris/data/*
 !docker/mopidy-iris/data/.gitkeep
 docker/mopidy-iris/media/*
