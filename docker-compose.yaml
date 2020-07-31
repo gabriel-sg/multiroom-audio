@@ -9,7 +9,7 @@ services:
       args: 
         - SNAPCASTVERSION=0.20.0
         - SNAPCAST_FILE=0.20.0-1
-        - ARCH=armhf # or amd64
+        - ARCH=amd64 # or armhf
     ports:
       - 1704:1704
       - 1705:1705
