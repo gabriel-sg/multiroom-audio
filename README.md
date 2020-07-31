@@ -31,6 +31,10 @@ In order to listen the music it's necesary to install snapclient. There are two 
 - [Official instructions](https://github.com/badaix/snapcast#installation)
 - [Android app](https://play.google.com/store/apps/details?id=de.badaix.snapcast)
 
+This repository has an script for an easy installation and service setup on Debian base systems.
+
+    sudo ./install-snapclient.sh [arch] [snapserver_address]
+    e.g. sudo ./install-snapclient.sh amd64 localhost
 ### Listen to music
 That's all! The system can be easily tested by playing audio clip provided in this repository.
 
