@@ -15,8 +15,10 @@ RUN apt-get update \
     gstreamer1.0-plugins-ugly \
     gstreamer1.0-pulseaudio \
     gstreamer1.0-tools \
+    gstreamer1.0-alsa \
     gir1.2-gstreamer-1.0 \
-     gir1.2-gst-plugins-base-1.0 \
+    gir1.2-gst-plugins-base-1.0 \
+    gir1.2-gst-plugins-bad-1.0 \
     libasound2-dev \
     python-dev \
     python-gst-1.0 \
@@ -25,7 +27,7 @@ RUN apt-get update \
     python3-pip \
     gnupg2 \
     build-essential \
-    # libpulse0 \
+    libpulse0 \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/*
 
