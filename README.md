@@ -21,15 +21,21 @@ By default, all this extensions are installed but only the Mopidy-mpd and Mopidy
     git clone https://github.com/gabriel-sg/multiroom-audio.git
     cd multiroom-audio
 
-##### Build and run docker images
+### Build and run docker images
+Set snapserver arch in *docker-compose.yaml* (armhf or amd64) and then run.
+
     docker-compose up
 
-##### Install Snapclient
+### Install Snapclient
 In order to listen the music it's necesary to install snapclient. There are two options:
 - [Official instructions](https://github.com/badaix/snapcast#installation)
 - [Android app](https://play.google.com/store/apps/details?id=de.badaix.snapcast)
 
-##### Listen to music
+This repository has an script for an easy installation and service setup on Debian base systems.
+
+    sudo ./install-snapclient.sh [arch] [snapserver_address]
+    e.g. sudo ./install-snapclient.sh amd64 localhost
+### Listen to music
 That's all! The system can be easily tested by playing audio clip provided in this repository.
 
     localhost:6680 -> Browse -> File -> media -> Monarch-of-the-street-clip.mp3
