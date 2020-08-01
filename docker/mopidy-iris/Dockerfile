@@ -1,4 +1,5 @@
-FROM python:3.7.5
+#FROM python:3.7.5
+FROM circleci/python:3.7.5
 
 # witch to the root user while we do our changes
 USER root
