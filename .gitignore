@@ -13,3 +13,5 @@ docker/mopidy-iris/data/*
 docker/mopidy-iris/media/*
 !docker/mopidy-iris/media/.gitkeep
 !docker/mopidy-iris/media/Monarch_of_the_street_clip.mp3
+docker/snapserver/config/*
+!docker/snapserver/config/.gitkeep

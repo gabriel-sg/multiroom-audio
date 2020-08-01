@@ -17,6 +17,7 @@ services:
     volumes:
       - soundshare:/tmp
       - ./docker/snapserver/snapserver.conf:/etc/default/snapserver.conf
+      - ./docker/snapserver/config:/root/.config/snapserver
       # - ./docker/snapserver/snapserver:/etc/default/snapserver
 
   mopidy:
