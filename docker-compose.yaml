@@ -42,6 +42,7 @@ services:
       - ./docker/mopidy-iris/playlists:/var/lib/mopidy/m3u
       - ./docker/mopidy-iris/http:/var/lib/mopidy/http
       - soundshare:/tmp
+      - /usr/share/zoneinfo/America/Argentina/Buenos_Aires:/etc/localtime
 
 volumes:
   soundshare:

@@ -1,5 +1,4 @@
-#FROM python:3.7.5
-FROM circleci/python:3.7.5
+FROM python:3.7.5-buster
 
 # witch to the root user while we do our changes
 USER root
@@ -7,8 +6,9 @@ USER root
 # Install GStreamer and other required Debian packages
 RUN apt-get update \
   && apt-get install -y \
-    git \
-    wget \
+    git mercurial xvfb \
+    locales sudo ca-certificates tar gzip parallel \
+    net-tools netcat unzip zip bzip2 curl wget make \
     dumb-init \
     graphviz-dev \
     gstreamer1.0-plugins-bad \
@@ -26,15 +26,21 @@ RUN apt-get update \
     python3-gst-1.0 \
     python3-dev \
     python3-pip \
+    gnupg \
     gnupg2 \
     build-essential \
     libpulse0 \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/*
 
+# Set timezone to UTC by default
+RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # Make python3-gst-1.0 available to non-Debian Python 3.7 installation
 RUN ln -s /usr/lib/python3/dist-packages/gi /usr/local/lib/python3.7/site-packages/gi
+
+# Install pipenv and poetry
+RUN sudo pip install --no-cache pipenv poetry
 
 # Install libspotify-dev from apt.mopidy.com
 RUN wget -q -O - https://apt.mopidy.com/mopidy.gpg \
@@ -47,7 +53,6 @@ RUN wget -q -O - https://apt.mopidy.com/mopidy.gpg \
 # Clone Iris from the repository and install in development mode.
 # This allows a binding at "/iris" to map to your local folder for development, rather than
 # installing using pip.
-# RUN git clone https://github.com/jaedb/Iris.git /iris \
 RUN git clone https://github.com/jaedb/Iris.git /iris \
  && cd /iris \
  && python3.7 setup.py develop \
@@ -88,7 +93,8 @@ RUN set -ex \
  && mkdir /var/lib/mopidy/local \
  && chown mopidy:audio -R $HOME /entrypoint.sh /iris \
  && chmod go+rwx -R $HOME /entrypoint.sh /iris \
- && echo "1" >> /IS_CONTAINER
+ && echo "1" >> /IS_CONTAINER \
+ && echo 'mopidy ALL=NOPASSWD: ALL' >> /etc/sudoers
 
 # Runs as mopidy user by default.
 USER mopidy:audio
