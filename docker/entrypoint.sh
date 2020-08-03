@@ -5,8 +5,7 @@ then
     export PULSE_COOKIE=$HOME/pulse.cookie
 fi
 
-sudo chown mopidy:audio -R $HOME /iris
-sudo chmod go+rwx -R $HOME /iris
+sudo chown mopidy:audio -R $HOME /iris /config
+sudo chmod 777 -R $HOME /iris /config
 
-# mopidy local scan
 exec "$@"
