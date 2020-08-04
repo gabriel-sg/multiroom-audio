@@ -7,7 +7,6 @@ docker/mopidy-iris/http/*
 !docker/mopidy-iris/http/.gitkeep
 docker/mopidy-iris/playlists/*
 !docker/mopidy-iris/playlists/.gitkeep
-!docker/mopidy-iris/playlists/Radios.m3u8
 docker/mopidy-iris/data/*
 !docker/mopidy-iris/data/.gitkeep
 docker/mopidy-iris/media/*
