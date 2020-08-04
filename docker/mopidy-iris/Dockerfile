@@ -70,6 +70,8 @@ RUN python3.7 -m pip install --no-cache \
   Mopidy-GMusic \
   Mopidy-SoundCloud \
   Mopidy-YouTube==3.0 \
+  Mopidy-RadioNet \
+  Mopidy-SomaFM \
   # pip not up-to-date for Mopidy-Tidal (https://github.com/tehkillerbee/mopidy-tidal/issues/14)
   git+https://github.com/tehkillerbee/mopidy-tidal.git@master
 
