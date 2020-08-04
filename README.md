@@ -10,8 +10,10 @@ The system can be customize by adding extensions to Mopidy. Some of the most pop
   - [Mopidy-SoundCloud](https://github.com/mopidy/mopidy-soundcloud)
   - [Mopidy-GMusic](https://github.com/mopidy/mopidy-gmusic)
   - [Mopidy-YouTube](https://github.com/natumbri/mopidy-youtube)
+  - [Mopidy-SomaFM](https://github.com/AlexandrePTJ/mopidy-somafm)
+  - [Mopidy-RadioNet](https://github.com/plintx/mopidy-radionet)
 
-By default, all this extensions are installed but only the Mopidy-mpd and Mopidy-YouTube are enable (see *mopidy.example.conf* file). Iris work perfectly with the spotify extension but it require premium account.
+By default, all this extensions are installed but only the Mopidy-mpd and Mopidy-SomaFM are enable (see *mopidy.example.conf* file). Iris work perfectly with the spotify extension but it require premium account.
 
 ## Requirements
 - amd64 or armhf computer with docker and docker-compose installed.
