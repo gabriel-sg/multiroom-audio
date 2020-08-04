@@ -31,6 +31,8 @@ services:
     ports:
       - 6600:6600
       - 6680:6680
+    environment:
+      - TZ=America/Buenos_Aires
     volumes:
       # Uncomment these lines to use a host-managed development build
       #- ./docker/mopidy-iris/dev:/iris/mopidy_iris
@@ -42,7 +44,6 @@ services:
       - ./docker/mopidy-iris/playlists:/var/lib/mopidy/m3u
       - ./docker/mopidy-iris/http:/var/lib/mopidy/http
       - soundshare:/tmp
-      - /usr/share/zoneinfo/America/Argentina/Buenos_Aires:/etc/localtime
 
 volumes:
   soundshare:
